@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- base resets & defaults --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #FAF7F2;
+  color: #1F2937;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- reusable component layer --- */
+@layer components {
+
+  /* primary filled button */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-white rounded-input px-5 py-2 text-sm font-medium transition-all duration-150 cursor-pointer;
+  }
+
+  /* outlined teal button — for dashboard nav actions */
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-white rounded-input px-5 py-2 text-sm font-medium transition-all duration-150 cursor-pointer bg-transparent;
+  }
+
+  /* form input */
+  .form-input {
+    @apply w-full border border-subtle rounded-input px-4 py-2.5 text-[15px] text-heading placeholder:text-muted
+           focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-150;
+  }
+
+  /* white card with hairline border */
+  .card {
+    @apply bg-white border border-subtle rounded-card;
+  }
+
+  /* small uppercase section label */
+  .label-xs {
+    @apply text-[11px] uppercase tracking-[0.08em] text-muted font-medium;
+  }
+}
